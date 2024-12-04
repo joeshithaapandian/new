@@ -1,6 +1,6 @@
 from flask import Flask, request
 
-app = Flask(_name_)
+app = Flask(__name__)  # Corrected: __name__ with double underscores
 
 @app.route('/')
 def index():
@@ -22,5 +22,5 @@ def calculate():
     except ValueError:
         return "Invalid input. Please enter numeric grades separated by commas."
 
-if _name_ == '_main_':
+if __name__ == '__main__':  # Corrected: __name__ and __main__ with double underscores
     app.run(host='0.0.0.0', port=8080)
